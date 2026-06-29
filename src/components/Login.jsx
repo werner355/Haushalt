@@ -18,7 +18,7 @@ export default function Login() {
         await signInWithEmailAndPassword(auth, email, password)
       }
     } catch (err) {
-      setError(err.message.replace('Firebase: ', '').replace(/ \(auth.*\)\.?/, ''))
+      setError(err.message || err.code || 'Unbekannter Fehler')
     }
   }
 
